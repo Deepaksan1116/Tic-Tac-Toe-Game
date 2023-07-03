@@ -22,6 +22,7 @@ namespace Tic_Tac_Toe_Game_WPF
     {
 
         UserRepositry user_repo = new UserRepositry();
+        static int temp = 0;
        
         public User_Profile()
         {
@@ -44,7 +45,7 @@ namespace Tic_Tac_Toe_Game_WPF
                 }
                 else if (temp == 2)
                 {
-                    if (Login_Page.new_user.Username == user.Username)
+                    if (Login_Page.second_user.Username == user.Username)
                     {
                         Grid1.DataContext = user;
                     }
@@ -54,8 +55,17 @@ namespace Tic_Tac_Toe_Game_WPF
 
         private void txt_back_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            Mainmenu.count = 0;
-            this.NavigationService.Navigate(new Mainmenu());
+            if (temp == 0)
+            {
+                Mainmenu.count = 0;
+                temp++;
+                this.NavigationService.Navigate(new Mainmenu());
+            }
+            else
+            {
+                Mainmenu.count = 1;
+                this.NavigationService.Navigate(new Mainmenu());
+            }
         }
     }
 }

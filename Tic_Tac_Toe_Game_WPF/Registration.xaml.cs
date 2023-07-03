@@ -50,23 +50,22 @@ namespace Tic_Tac_Toe_Game_WPF
                 string FileName = FilePath[FilePath.Length - 1];
 
                 Profile_picture.Source = new BitmapImage(new Uri(openFileDlg.FileName));
-                //tempimg.BeginInit();
-                //tempimg.UriSource = new Uri(FileFrom);
-                //tempimg.EndInit();
-                //CapImg.Source = tempimg;
-                //SavedImage = tempimg;
+              
                 
             }
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
+            UserRepositry.User_list.Clear();
+            
             string name = Txtbox_Name.Text;
             string gmail = Txtbox_Gmail.Text;
             int password =Convert.ToInt32(Txtbox_Password.Text);
             string image = file_path;
             new_user = new User(name, password, gmail, 0, 0, 0, 0, 0, image);
             user_repo.Add_user(new_user);
+            user_repo.Load_users();
         }
     }
 }

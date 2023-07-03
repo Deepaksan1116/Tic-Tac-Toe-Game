@@ -8,7 +8,7 @@
       d:DesignHeight="650" d:DesignWidth="1200"
       Title="Registration">
 
-    <Grid Background="#202124">
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.3*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -16,38 +16,54 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.3*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Gray" BorderThickness="3" Width="600" Height="425" CornerRadius="25">
-            <StackPanel Orientation="Vertical">
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black"  Width="600" Height="425" CornerRadius="35" Background="White">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50" Color="#877b77" Opacity="0.4" Direction="0" ShadowDepth="10"/>
+            </Border.Effect>
             
-                <TextBlock Margin="0,10,0,0" Text="Registration" FontSize="22" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"></TextBlock>
+            <StackPanel Orientation="Vertical">
+
+                <TextBlock Margin="0,10,0,0" Text="Create New Account" FontSize="28" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"></TextBlock>
                 
-                <TextBlock Margin="-350,60,0,0" Text="Name" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"></TextBlock>
-                <TextBlock Margin="-350,35,0,0" Text="Gmail" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"></TextBlock>
-                <TextBlock Margin="-320,35,0,0" Text="Password" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"></TextBlock>
-                <TextBlock Margin="-350,35,0,0" Text="Image" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Margin="-350,60,0,0" Text="Name" FontSize="18" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Margin="-350,35,0,0" Text="Gmail" FontSize="18" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Margin="-320,35,0,0" Text="Password" FontSize="18" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Margin="-350,35,0,0" Text="Image" FontSize="18" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"></TextBlock>
 
-                <TextBox Name="Txtbox_Name" Margin="80,-380,0,0" Height="30" Width="250" Foreground="White" FontSize="16" Background="#202124" BorderBrush="Gray" BorderThickness="2" ></TextBox>
-                <TextBox Name="Txtbox_Gmail" Margin="80,-260,0,0" Height="30" Width="250" Foreground="White" FontSize="16" Background="#202124" BorderBrush="Gray" BorderThickness="2" ></TextBox>
+                <TextBox Name="Txtbox_Name" Margin="80,-380,0,0" Height="30" Width="250" Foreground="Black" FontSize="16" BorderBrush="Gray" BorderThickness="2" ></TextBox>
+                <TextBox Name="Txtbox_Gmail" Margin="80,-260,0,0" Height="30" Width="250" Foreground="Black" FontSize="16" BorderBrush="Gray" BorderThickness="2" ></TextBox>
 
-                <TextBox Name="Txtbox_Password" Margin="80,-140,0,0" Height="30" Width="250" Foreground="White" FontSize="16" Background="#202124" BorderBrush="Gray" BorderThickness="2" ></TextBox>
+                <TextBox Name="Txtbox_Password" Margin="80,-140,0,0" Height="30" Width="250" Foreground="Black" FontSize="16"  BorderBrush="Gray" BorderThickness="2" ></TextBox>
 
-                <!--<TextBlock Margin="550,-295,0,0" Text="X" FontSize="22" Foreground="White" ></TextBlock>-->
+                
 
                 
                 <Border Margin="-110,-30,0,0" Width="60" Height="40" BorderThickness="3" BorderBrush="Gray">
                     <Image Name="Profile_picture"  Width="60" Height="50" ></Image>
                 </Border>
 
-                <TextBlock Name="Open_File" Margin="300,-65,0,0"  Text="+" FontSize="55" Foreground="White" MouseLeftButtonUp="Open_File_MouseLeftButtonUp_1"></TextBlock>
+                <TextBlock Name="Open_File" Margin="300,-65,0,0"  Text="+" FontSize="55" Foreground="Gray" MouseLeftButtonUp="Open_File_MouseLeftButtonUp_1"></TextBlock>
 
-                <Button Name="btn_save" Margin="180,20,0,0" Width="150" Height="40" Content="Save" Background="#202124" FontWeight="Bold" Foreground="White" FontSize="18" BorderBrush="Gray" BorderThickness="3" Click="btn_save_Click"></Button>
+                <Button Name="btn_save" Margin="180,20,0,0" Width="150" Height="40" Content="Save" Background="#58AF9B" FontWeight="Bold" Foreground="White" FontSize="18"  Click="btn_save_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
 
-                <Button Name="btn_back" Margin="-250,-39,0,0" Width="150" Height="40" Content="Back" Background="#202124" FontWeight="Bold" Foreground="White" FontSize="18" BorderBrush="Gray" BorderThickness="3"></Button>
+                <Button Name="btn_back" Margin="-250,-39,0,0" Width="150" Height="40" Content="Back" Background="#58AF9B" FontWeight="Bold" Foreground="White" FontSize="18" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
 
 
             </StackPanel>

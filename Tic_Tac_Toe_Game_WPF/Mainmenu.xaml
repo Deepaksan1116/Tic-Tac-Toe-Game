@@ -9,111 +9,74 @@
       Title="Mainmenu">
     <Page.Resources>
         <Style TargetType="Button" x:Key="Btn_style">
-            <Setter Property="Width" Value="200"/>
-            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Height" Value="50"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Background" Value="#202124"/>
+            <Setter Property="Background" Value="#58AF9B"/>
 
             <Style.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="10"/>
+                    <Setter Property="CornerRadius" Value="25"/>
                 </Style>
             </Style.Resources>
         </Style>
             
     </Page.Resources>
 
-    <Grid Background="#202124" >
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.1*"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="0.1*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-
+    <Grid Background="White" >
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*" ></RowDefinition>
+            <RowDefinition Height="0.1*" ></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="0,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1" >
-            <Border  Width="150" Height="35" BorderThickness="1" BorderBrush="White" CornerRadius="6">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Name="txt_playername_1" Margin="20,7,0,0"  Text="Player Name1" FontSize="14" Foreground="White"></TextBlock>
+        <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center">
+            <Border  Height="460" Width="900" BorderThickness="0" Background="White" CornerRadius="35">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="50" Color="#877b77" Opacity="0.4" Direction="0" ShadowDepth="10"/>
+                </Border.Effect>
+                <StackPanel>
+                    <StackPanel Margin="40,30,0,0" Orientation="Horizontal" VerticalAlignment="Top">
+                        <Border  Width="150" Height="35" BorderThickness="2" BorderBrush="Black"  CornerRadius="6" Background="White">
+                            <TextBlock Name="txt_playername_1" Margin="20,7,0,0"  Text="Player Name1" FontSize="14" Foreground="Black"></TextBlock>
+                        </Border>
+                        <Border Margin="20,0,0,0"  Width="150" Height="35" BorderThickness="2" BorderBrush="Black"  CornerRadius="6" Background="White">
+                            <TextBlock Name="txt_playername_2"  Margin="20,7,0,0"  Text="Player Name2" FontSize="14" Foreground="Black"></TextBlock>
+                        </Border>
+                        <Button Margin="20,0,0,0" Name="btn_login" Content="Login" Width="100" Height="35" Background="#58AF9B" Foreground="White" FontSize="16" FontWeight="Bold" BorderBrush="Gray" BorderThickness="0" Click="btn_login_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <TextBlock Margin="180,0,0,0"  Text="Round" FontSize="22" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
+                        <ComboBox Margin="20,0,0,0" Name="combobox1"   Text="Round" FontSize="18" Width="140" Height="35" Foreground="Black" FontWeight="Bold">
+                            <ComboBoxItem Content="3"></ComboBoxItem>
+                            <ComboBoxItem Content="7"></ComboBoxItem>
+                            <ComboBoxItem Content="9"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <!--<Button Name="btn_Resume" Margin="0,30,0,0" Content="Resume" Style="{StaticResource Btn_style}" BorderThickness="0" Click="btn_Resume_Click"></Button>-->
+                        <Button Margin="0,80,0,0" Name="btn_play" Content="Play" Style="{StaticResource Btn_style}" BorderBrush="Gray"  BorderThickness="0"  Click="btn_play_Click"></Button>
+                        <Button Margin="0,20,0,0" Name="btn_Userprofile_1" Content="User Profile" Style="{StaticResource Btn_style}" BorderBrush="Gray" BorderThickness="0" Click="btn_Userprofile_1_Click"></Button>
+
+                        <Button Margin="0,20,0,0" Name="btn_Userprofile_2" Content="User Profile" Style="{StaticResource Btn_style}" BorderBrush="Gray" BorderThickness="0" Click="btn_Userprofile_2_Click"></Button>
+
+                        <Button Margin="0,20,0,0" Name="btn_Leaderboard" Content="Leader Board" Style="{StaticResource Btn_style}" BorderBrush="Gray" BorderThickness="0" Click="btn_Leaderboard_Click"></Button>
+                    </StackPanel>
                 </StackPanel>
             </Border>
         </StackPanel>
 
-        <StackPanel Margin="200,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1" >
-            <Border  Width="150" Height="35" BorderThickness="1" BorderBrush="White" CornerRadius="6">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Name="txt_playername_2"  Margin="20,7,0,0"  Text="Player Name2" FontSize="14" Foreground="White"></TextBlock>
-                </StackPanel>
-            </Border>
-        </StackPanel>
 
-        <StackPanel Margin="400,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1" >
-        
-                <StackPanel Orientation="Horizontal">
-                    <Button Margin="-20,0,0,0" Name="btn_login" Content="Login" Width="100" Height="35" Background="#202124" Foreground="White" FontSize="18" FontWeight="Bold" BorderBrush="Gray" BorderThickness="3" Click="btn_login_Click">
-                    <Button.Resources>
-                    <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="8"/>
-                        
-                        </Style>
-                    </Button.Resources>
-                </Button>
-                </StackPanel>
-           
-        </StackPanel>
-
-        <StackPanel Margin="550,0,0,0" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" >
-
-            <StackPanel Orientation="Horizontal">
-                <TextBlock   Text="Round" FontSize="18" Foreground="White" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
-            </StackPanel>
-        </StackPanel>
-
-        <StackPanel Margin="780,5,0,0" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" >
-
-            <StackPanel Orientation="Horizontal">
-                <ComboBox Name="combobox1"   Text="Round" FontSize="22" Width="120" Height="25" Foreground="White" FontWeight="Bold" VerticalAlignment="Center" Background="Gray" BorderBrush="#FF575656">
-                    
-                    
-                    <ComboBox.ItemContainerStyle>
-                        <Style TargetType="ComboBoxItem">
-                            <Setter Property="Background" Value="#202124"></Setter>
-                        <Setter Property="BorderBrush" Value="White"></Setter>
-                          
-                    </Style>
-                    </ComboBox.ItemContainerStyle>
-                    <ComboBoxItem Content="1"></ComboBoxItem>
-                    <ComboBoxItem Content="2"></ComboBoxItem>
-                    <ComboBoxItem Content="3"></ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
-        </StackPanel>
-
-        <Line Margin="0,120,0,0" X1="2500" Stroke="Gray" StrokeThickness="2" Grid.Column="0" Grid.ColumnSpan="3"></Line>
-
-
-
-        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
      
-            <Button Margin="0,50,0,0" Name="btn_play" Content="Play" Style="{StaticResource Btn_style}" BorderBrush="Gray"  BorderThickness="3"  Click="btn_play_Click"></Button>
-
-            <Button Margin="0,20,0,0" Name="btn_Userprofile_1" Content="User Profile" Style="{StaticResource Btn_style}" BorderBrush="Gray" BorderThickness="3" Click="btn_Userprofile_1_Click"></Button>
-
-            <Button Margin="0,20,0,0" Name="btn_Userprofile_2" Content="User Profile" Style="{StaticResource Btn_style}" BorderBrush="Gray" BorderThickness="3" Click="btn_Userprofile_2_Click"></Button>
-
-            <Button Margin="0,20,0,0" Name="btn_Leaderboard" Content="Leader Board" Style="{StaticResource Btn_style}" BorderBrush="Gray" BorderThickness="3" Click="btn_Leaderboard_Click"></Button>
-
-            <!--<Button Margin="0,20,0,0" Name="btn_Back" Content="Back" Style="{StaticResource Btn_style}" BorderBrush="Gray" BorderThickness="3" Click="btn_Back_Click"></Button>-->
-        </StackPanel>
+           
 
     </Grid>
 </Page>

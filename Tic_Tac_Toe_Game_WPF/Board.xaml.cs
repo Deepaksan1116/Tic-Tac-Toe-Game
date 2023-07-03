@@ -29,6 +29,7 @@ namespace Tic_Tac_Toe_Game_WPF
 
         User x_user;
         User user;
+        char current_player;
         
         static int count = 0;
         int round_count = 0;
@@ -44,13 +45,14 @@ namespace Tic_Tac_Toe_Game_WPF
         public Board()
         {
             InitializeComponent();
+            Grid_panel.Visibility = Visibility.Collapsed;
             user1 = Mainmenu.user1;
             user2 = Mainmenu.user2;
 
             txt_username_1.Text = user1.Username;
             txt_username_2.Text = user2.Username;
 
-          
+
 
             txt_winning_username1.Text = user1.Username;
             txt_winning_username2.Text = user2.Username;
@@ -64,37 +66,10 @@ namespace Tic_Tac_Toe_Game_WPF
             Rowlevel_1.Visibility = Visibility.Hidden;
             Rowlevel_2.Visibility = Visibility.Hidden;
             Rowlevel_3.Visibility = Visibility.Hidden;
+            load_chars();
         }
 
-        private void Move_indication(int count)
-        {
-            if (x_user.Username == user1.Username)
-            {
-                if (count % 2 != 0)
-                {
-                    border_txt_username_1.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#14bdac"));
-                    border_txt_username_2.BorderBrush = Brushes.White;
-                }
-                else
-                {
-                    border_txt_username_2.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#14bdac"));
-                    border_txt_username_1.BorderBrush = Brushes.White;
-                }
-            }
-            else
-            {
-                if (count % 2 != 0)
-                {
-                    border_txt_username_2.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#14bdac"));
-                    border_txt_username_1.BorderBrush = Brushes.White;
-                }
-                else
-                {
-                    border_txt_username_1.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#14bdac"));
-                    border_txt_username_2.BorderBrush = Brushes.White;
-                }
-            }
-        }
+        
         private void Get_Current_coin()
         {
             if (current_coin == 'X')
@@ -119,17 +94,17 @@ namespace Tic_Tac_Toe_Game_WPF
         {
             if (count >= 5)
             {
-                board1 = new board(coins);
+                board1 = new board(coins,current_player);
                 winning_symbol = board1.Winning_statement();
                 if (count == 9 && winning_symbol == 'D')
                 {
-                    temp_round = new Round(user1, user2, board1, x_user);
+                    temp_round = new Round(user1, user2, x_user,winning_symbol);
                     MessageBox.Show("Match is draw");
                     Game_rounds(temp_round);
                 }
                 else if (winning_symbol == 'X' || winning_symbol == 'O')
                 {
-                    temp_round = new Round(user1, user2, board1, x_user);
+                    temp_round = new Round(user1, user2, x_user,winning_symbol);
              
                     if (winning_symbol=='X')
                     {
@@ -328,9 +303,10 @@ namespace Tic_Tac_Toe_Game_WPF
                    text1.Foreground = Brushes.White;
                 }
                 text1.Text = current_coin.ToString();
+                current_player = current_coin;
                 coins[0] = new Coin(current_coin, 0);
                 count++;
-                Move_indication(count);
+                
                 Get_Current_coin();
                 Check_Winning_statement();
 
@@ -352,9 +328,10 @@ namespace Tic_Tac_Toe_Game_WPF
                     text2.Foreground = Brushes.White;
                 }
                 text2.Text = current_coin.ToString();
+                current_player = current_coin;
                     coins[1] = new Coin(current_coin, 1);
                     count++;
-                Move_indication(count);
+             
                 Get_Current_coin();
                     Check_Winning_statement();
 
@@ -376,9 +353,10 @@ namespace Tic_Tac_Toe_Game_WPF
                     text3.Foreground = Brushes.White;
                 }
                 text3.Text = current_coin.ToString();
+                current_player = current_coin;
                 coins[2] = new Coin(current_coin, 2);
                 count++;
-                Move_indication(count);
+               
                 Get_Current_coin();
                 Check_Winning_statement();
 
@@ -402,9 +380,10 @@ namespace Tic_Tac_Toe_Game_WPF
             {
                 
                 text4.Text = current_coin.ToString();
+                current_player = current_coin;
                 coins[3] = new Coin(current_coin, 3);
                 count++;
-                Move_indication(count);
+            
                 Get_Current_coin();
                 Check_Winning_statement();
 
@@ -428,9 +407,10 @@ namespace Tic_Tac_Toe_Game_WPF
             { 
 
                 text5.Text = current_coin.ToString();
+                current_player = current_coin;
                 coins[4] = new Coin(current_coin, 4);
                 count++;
-                Move_indication(count);
+             
                 Get_Current_coin();
                 Check_Winning_statement();
             }
@@ -454,9 +434,10 @@ namespace Tic_Tac_Toe_Game_WPF
                 }
 
                 text6.Text = current_coin.ToString();
+                current_player = current_coin;
                 coins[5] = new Coin(current_coin, 5);
                 count++;
-                Move_indication(count);
+            
                 Get_Current_coin();
                 Check_Winning_statement();
             }
@@ -479,9 +460,10 @@ namespace Tic_Tac_Toe_Game_WPF
                 }
 
                 text7.Text = current_coin.ToString();
+                current_player = current_coin;
                 coins[6] = new Coin(current_coin, 6);
                 count++;
-                Move_indication(count);
+           
                 Get_Current_coin();
                 Check_Winning_statement();
 
@@ -503,9 +485,10 @@ namespace Tic_Tac_Toe_Game_WPF
                     text8.Foreground = Brushes.White;
                 }
                 text8.Text = current_coin.ToString();
+                current_player = current_coin;
                 coins[7] = new Coin(current_coin, 7);
                 count++;
-                Move_indication(count);
+               
                 Get_Current_coin();
                 Check_Winning_statement();
             }
@@ -526,9 +509,10 @@ namespace Tic_Tac_Toe_Game_WPF
                     text9.Foreground = Brushes.White;
                 }
                 text9.Text = current_coin.ToString();
+                current_player = current_coin;
                 coins[8] = new Coin(current_coin, 8);
                 count++;
-                Move_indication(count);
+            
                 Get_Current_coin();
                 Check_Winning_statement();
             }
@@ -567,10 +551,12 @@ namespace Tic_Tac_Toe_Game_WPF
                 txt_user1_symbol.Text = "O";
             }
             btn_toss.Visibility = Visibility.Hidden;
+            Grid_panel.Visibility = Visibility.Visible;
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
+            Mainmenu.count = 3;
             this.NavigationService.Navigate(new Mainmenu());
         }
     }

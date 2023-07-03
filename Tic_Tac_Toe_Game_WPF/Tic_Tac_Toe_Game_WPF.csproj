@@ -60,6 +60,9 @@
       <DependentUpon>Board.xaml</DependentUpon>
     </Compile>
     <Compile Include="Coin.cs" />
+    <Compile Include="Forgetpassword.xaml.cs">
+      <DependentUpon>Forgetpassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="LeaderBoard.xaml.cs">
       <DependentUpon>LeaderBoard.xaml</DependentUpon>
@@ -80,6 +83,10 @@
       <DependentUpon>User_Profile.xaml</DependentUpon>
     </Compile>
     <Page Include="Board.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forgetpassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

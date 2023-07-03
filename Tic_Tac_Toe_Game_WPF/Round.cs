@@ -10,9 +10,13 @@ namespace Tic_Tac_Toe_Game_WPF
     {
         User _user_1;
         User _user_2;
-        board _temp_board;
+       
         User _x_user;
         User round_winner;
+
+        char _symbol;
+
+       
 
 
         public User User_1
@@ -24,10 +28,7 @@ namespace Tic_Tac_Toe_Game_WPF
         {
             get { return _user_2; }
         }
-        public board Temp_board
-        {
-            get { return _temp_board; }
-        }
+       
         public User X_user
         {
             get { return _x_user; }
@@ -38,23 +39,30 @@ namespace Tic_Tac_Toe_Game_WPF
             get { return round_winner; }
         }
 
+        public char Symbol
+        {
+            get { return _symbol; }
+           
+        }
+
         public Round()
         {
 
         }
-        public Round(User user1, User user2, board _board, User x_user)
+        public Round(User user1, User user2, User x_user,char symbol)
         {
             this._user_1 = user1;
             this._user_2 = user2;
-            this._temp_board = _board;
+           
             this._x_user = x_user;
             this.round_winner = Get_round_winner();
+            this._symbol = symbol;
         }
 
 
         public User Get_round_winner()
         {
-            if (Temp_board.Winning_statement() == 'X')
+            if (Symbol == 'X')
             {
                 if (X_user.Username == User_1.Username)
                 {
@@ -66,7 +74,7 @@ namespace Tic_Tac_Toe_Game_WPF
                 }
 
             }
-            else if (Temp_board.Winning_statement() == 'O')
+            else if (Symbol == 'O')
             {
                 if (X_user.Username != User_1.Username)
                 {

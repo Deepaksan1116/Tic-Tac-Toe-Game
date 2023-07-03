@@ -22,6 +22,9 @@ namespace Tic_Tac_Toe_Game_WPF
     {
         UserRepositry user_repo = new UserRepositry();
          List<User> _leader = new List<User>();
+
+         static int temp = 0;
+        
         public List<User> Leader
         {
            get {return _leader; }
@@ -30,14 +33,27 @@ namespace Tic_Tac_Toe_Game_WPF
         public LeaderBoard()
         {
             InitializeComponent();
-            //user_repo.Load_users();
+          
             _leader = user_repo.Get_leader_board();
-            Leaderlist.DataContext = this ;
+            Leaderlist.ItemsSource = Leader;
         }
 
-        private void btn_back_Click(object sender, RoutedEventArgs e)
+        
+
+        private void btn_back_Click_1(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Mainmenu());
+           
+            if (temp==0)
+            {
+                Mainmenu.count = 0;
+                temp = 1;
+                this.NavigationService.Navigate(new Mainmenu());
+            }
+            else if (Mainmenu.count==1)
+            {
+                Mainmenu.count = 1;
+                this.NavigationService.Navigate(new Mainmenu());
+            }
         }
     }
 }

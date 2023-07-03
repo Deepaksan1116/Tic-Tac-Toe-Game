@@ -35,36 +35,52 @@ namespace Tic_Tac_Toe_Game_WPF
 
         public object NavigationService { get; private set; }
 
-        private void btn_Login_Click(object sender, RoutedEventArgs e)
+      
+
+        private void btn_Signin_Click(object sender, RoutedEventArgs e)
         {
-            string username = txt_username.Text;
-            string password = txt_password.Password;
-
-            foreach (var user in UserRepositry.User_list)
+            try
             {
-                if (username == user.Username && Convert.ToInt32(password) == user.User_pin)
-                {
-                    new_user = user;
-                    stk_login_panel.Visibility = Visibility.Hidden;
-                    Mainframe.NavigationService.Navigate(new Mainmenu());
+                string username = txt_username.Text;
+                string password = txt_password.Password;
 
+                foreach (var user in UserRepositry.User_list)
+                {
+                        if (username == user.Username && Convert.ToInt32(password) == user.User_pin)
+                        {
+                            new_user = user;
+                            stk_login_panel.Visibility = Visibility.Hidden;
+                            Mainframe.NavigationService.Navigate(new Mainmenu());
+                        }
+                    
                 }
             }
-
-
-
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void btn_Registration_Click(object sender, RoutedEventArgs e)
+        private void btn_signup_Click(object sender, RoutedEventArgs e)
         {
             stk_login_panel.Visibility = Visibility.Hidden;
             Mainframe.NavigationService.Navigate(new Registration());
         }
 
-        private void btn_home_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mw = new MainWindow();
-            mw.Show();
-        }
+        //private void txt_Forget_password_MouseEnter(object sender, MouseEventArgs e)
+        //{
+        //    txt_Forget_password.Foreground = Brushes.Red;
+           
+        //}
+
+        //private void txt_Forget_password_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        //{
+        //    txt_Forget_password.FontSize = 28;
+        //}
+
+        //private void txt_Forget_password_MouseLeave(object sender, MouseEventArgs e)
+        //{
+        //    txt_Forget_password.Foreground = Brushes.Black;
+        //}
     }
 }

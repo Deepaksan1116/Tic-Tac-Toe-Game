@@ -8,31 +8,35 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login_Page">
 
-    <Grid>
+    <Grid Background="White">
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition ></RowDefinition>
-            <RowDefinition Height="40" ></RowDefinition>
-        </Grid.RowDefinitions>
+     
 
         
 
 
-        <StackPanel x:Name="stk_login_panel" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Center" >
-            <TextBlock Margin="0,20,0,0"  Text="Login" FontSize="22" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"></TextBlock>
-            <TextBlock Margin="-280,30,0,0" Text="Username" FontSize="22"  Foreground="White" HorizontalAlignment="Center"></TextBlock>
-            <TextBox Name="txt_username" Margin="-40,10,0,0"  Width="350" Height="40"  FontSize="18"  Foreground="White" Padding="10,5,0,0" BorderBrush="White" BorderThickness="2" Background="#202124" HorizontalAlignment="Center"></TextBox>
-            <TextBlock  Margin="-280,15,0,0" Text="Password" FontSize="22"  Foreground="White" HorizontalAlignment="Center"></TextBlock>
-            <PasswordBox Name="txt_password" Margin="-40,10,0,0" Width="350" Height="40"  FontSize="18" FontWeight="Bold" Foreground="White" Padding="10,5,0,0" BorderBrush="White" BorderThickness="2" Background="#202124" HorizontalAlignment="Center"></PasswordBox>
-            <Button Name="btn_Login1" Margin="-40,40,0,0" Content="Login" Foreground="White" FontSize="18" FontWeight="Bold" Height="40" Width="350" BorderBrush="White" BorderThickness="2" Background="#202124" HorizontalAlignment="Center" Click="btn_Login1_Click" >
+        <StackPanel x:Name="stk_login_panel" Orientation="Vertical"  VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Border Width="450" Height="350" BorderThickness="0,0,0,0" BorderBrush="Black" CornerRadius="35" Background="White">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="50" Color="#877b77" Opacity="0.4" Direction="0" ShadowDepth="10"/>
+                </Border.Effect>
+                
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <TextBlock Margin="0,20,0,0"  Text="SIGN IN" FontSize="22" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock Margin="-260,30,0,0" Text="Username" FontSize="22"  Foreground="Black" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Name="txt_username" Margin="-1,5,0,0"  Width="350" Height="40"  FontSize="18"  Foreground="Black" Padding="10,5,0,0" BorderBrush="Gray" BorderThickness="2"  HorizontalAlignment="Center"></TextBox>
+            <TextBlock  Margin="-260,10,0,0" Text="Password" FontSize="22"  Foreground="Black" HorizontalAlignment="Center"></TextBlock>
+            <PasswordBox Name="txt_password" Margin="1,5,0,0" Width="350" Height="40"  FontSize="18" FontWeight="Bold" Foreground="Black" Padding="10,5,0,0" BorderBrush="Gray" BorderThickness="2"  HorizontalAlignment="Center"></PasswordBox>
+            <Button Name="btn_Login1" Margin="-3,20,0,0" Content="SIGN IN" Foreground="White" FontSize="18" FontWeight="Bold" Height="50" Width="350" BorderBrush="White" BorderThickness="2" Background="#58AF9B" HorizontalAlignment="Center" Click="btn_Login1_Click" >
                 <Button.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="10"/>
+                        <Setter Property="CornerRadius" Value="25"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            
+                </StackPanel>
+            </Border>
+
         </StackPanel>
 
     </Grid>

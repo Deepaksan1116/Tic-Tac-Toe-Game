@@ -20,7 +20,7 @@ namespace Tic_Tac_Toe_Game_WPF
     /// </summary>
     public partial class Login_Page : Page
     {
-        public static User new_user;
+        public static User second_user;
         public Login_Page()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace Tic_Tac_Toe_Game_WPF
             {
                 if (username == user.Username && Convert.ToInt32(password) == user.User_pin)
                 {
-                    new_user = user;
+                    second_user = user;
                     this.NavigationService.Navigate(new Mainmenu());
 
                 }

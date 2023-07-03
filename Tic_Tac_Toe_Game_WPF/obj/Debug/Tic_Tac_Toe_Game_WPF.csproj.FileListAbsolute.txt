@@ -24,3 +24,5 @@ C:\Users\DEEPAK\Documents\Visual Studio 2019\Projects\Tic_Tac_Toe_Game_WPF\obj\D
 C:\Users\DEEPAK\Documents\Visual Studio 2019\Projects\Tic_Tac_Toe_Game_WPF\obj\Debug\Login_Page.g.cs
 C:\Users\DEEPAK\Documents\Visual Studio 2019\Projects\Tic_Tac_Toe_Game_WPF\obj\Debug\Login_Page.baml
 C:\Users\DEEPAK\Documents\Visual Studio 2019\Projects\Tic_Tac_Toe_Game_WPF\obj\Debug\Tic_Tac_Toe_Game_WPF.csprojResolveAssemblyReference.cache
+C:\Users\DEEPAK\Documents\Visual Studio 2019\Projects\Tic_Tac_Toe_Game_WPF\obj\Debug\Forgetpassword.baml
+C:\Users\DEEPAK\Documents\Visual Studio 2019\Projects\Tic_Tac_Toe_Game_WPF\obj\Debug\Forgetpassword.g.cs

@@ -35,14 +35,29 @@ namespace Tic_Tac_Toe_Game_WPF
                 txt_playername_1.Text = user1.Username;
                 btn_Userprofile_1.Content = user1.Username;
                 count++;
+                //btn_Resume.Visibility = Visibility.Collapsed;
+                //btn_play.Margin = new Thickness(0, 80, 0, 0);
             }
             else if (count == 1)
             {
                 btn_login.Visibility = Visibility.Hidden;
-                user2 = Login_Page.new_user;
+                user2 = Login_Page.second_user;
                 txt_playername_1.Text = user1.Username;
                 txt_playername_2.Text = user2.Username;
+                btn_Userprofile_1.Content = user1.Username;
                 btn_Userprofile_2.Content = user2.Username;
+               // btn_Resume.Visibility = Visibility.Collapsed;
+               // btn_play.Margin = new Thickness(0,80,0,0);
+            }
+            else if (count == 3)
+            {
+                btn_login.Visibility = Visibility.Hidden;
+                user2 = Login_Page.second_user;
+                txt_playername_1.Text = user1.Username;
+                txt_playername_2.Text = user2.Username;
+                btn_Userprofile_1.Content = user1.Username;
+                btn_Userprofile_2.Content = user2.Username;
+                //btn_Resume.Visibility = Visibility.Visible;
             }
 
         }
@@ -54,10 +69,28 @@ namespace Tic_Tac_Toe_Game_WPF
 
         private void btn_play_Click(object sender, RoutedEventArgs e)
         {
-            
-            string temp =combobox1.Text;
-            Round_Count = Convert.ToInt32(temp);
-            this.NavigationService.Navigate(new Board());
+            if (user2 != null)
+            {
+                int round=3;
+
+                if (combobox1.SelectedItem == null)
+                {
+
+                    combobox1.Text = round.ToString();
+                    Round_Count = round;
+                    this.NavigationService.Navigate(new Board());
+                }
+                else
+                {
+                    string temp = combobox1.Text;
+                    Round_Count = Convert.ToInt32(temp);
+                    this.NavigationService.Navigate(new Board());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Login Player 2 After You Will Play");
+            }
         }
 
         private void btn_Userprofile_1_Click(object sender, RoutedEventArgs e)
@@ -77,9 +110,11 @@ namespace Tic_Tac_Toe_Game_WPF
             this.NavigationService.Navigate(new LeaderBoard());
         }
 
-        //private void btn_Back_Click(object sender, RoutedEventArgs e)
-        //{
-        //    this.NavigationService.Navigate(new MainWindow());
-        //}
+        private void btn_Resume_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+      
     }
 }
